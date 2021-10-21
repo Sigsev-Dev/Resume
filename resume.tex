@@ -1,0 +1,329 @@
+%-------------------------
+% Entry-level Resume in LaTeX
+% Version - v1.3
+% Last Edits - October 5, 2021
+%------------------------
+
+%%-------------------------------------
+% Notes to the User here -
+% 1) Change " Author+an = {N=highlight}" in "Publications.bib", where N is the number at which your name appears
+% 2) Use "\vspace" wisely, that would change spacing, and is currently being used as a hacky fix
+% 3) Do not delete the fonts in the left side
+% 4) Use the "Rich Text" feature on Overleaf - On the top panel next to source. Makes it much easier for starters on LaTeX to use this template
+% 5) Do NOT use periods at the end of bullet points, the sample (ipsum) text might have it
+% 6) Use "maxbibnames" on this file to change the maximum number of authors on the paper (Credits: Dr. Natasha Krell) - Default is 3, but change line 92 to add authors
+
+%%-------------------------------------
+% Changes from last version (v1.3, October 5, 2021) -
+% 1) Summary statement removed, replaced with 4 keywords on top and Impact statement
+
+% Changes from last version (v1.2, August 23, 2021) -
+% 1) Changes in the Technical Skills section - renamed to just Skills
+% 2) Changed the font size for the name
+% 3) Education to the top
+%%-------------------------------------
+
+
+%%-------------------------------------
+% Changes to be made in the next version -
+% 1) Shift to Class file, make changes here
+% 2) Use a fonts folder
+% 3) Incorporate Leadership & volunteering together
+% 4) Remove \vspace based 'hacky' fixes
+%%-------------------------------------
+
+
+\documentclass[a4,10pt]{article}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  STARTING HERE, DO NOT TOUCH ANYTHING 
+%%%%%%% --------------------------------------------------------------------------------------
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+ \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{tabularx}
+\hypersetup{colorlinks=true,urlcolor=black}
+\usepackage[11pt]{moresize}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[inline]{enumitem}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{anyfontsize}
+
+%%%% Function for gray text
+\usepackage{xcolor} 
+\def\gray#1{\textcolor{gray}{#1}} 
+
+%%%% Set Margins
+\usepackage[margin=1cm, top=1cm]{geometry}
+
+%%%% Set Fonts
+\setmainfont[
+BoldFont=SourceSansPro-Semibold.otf, %SourceSansPro-Bold.otf
+ItalicFont=SourceSansPro-RegularIt.otf
+]{SourceSansPro-Regular.otf}
+\setsansfont{SourceSansPro-Semibold.otf}
+
+%%%% Set Page
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%% Set URL Style
+\urlstyle{same}
+
+%%%% Set Indentation
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%%%% Set Secondary Color
+\definecolor{UI_blue}{RGB}{32, 64, 151}
+
+%%%% Define New Commands
+\usepackage[style=nature, maxbibnames=3]{biblatex}
+\addbibresource{Publications.bib}
+
+%%%% Bold Name in Publications
+\renewcommand*{\mkbibnamegiven}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+%%%% Set Sections formatting
+\titleformat{\section}{
+\color{UI_blue} \scshape \raggedright \large 
+}{}{0em}{}[\vspace{-10pt} \hrulefill \vspace{-6pt}]
+
+%%%% Set Subtext Formatting
+\newcommand{\subtext}[1]{
+#1\par\vspace{-0.2cm}}
+
+% \newcommand{\subtextit}[1]{\vspace{0.15cm}
+% \textit{ #1 \vspace{-0.2cm}} }
+
+%%%% Set Item Spacing
+\setlist[itemize]{align=parleft,left=0pt..1em}
+
+%%%% New Itemize "Zitemize" Formatting - tighter spacing than itemize
+\newenvironment{zitemize}{
+\begin{itemize}\itemsep0pt \parskip0pt \parsep1pt}
+{\end{itemize}\vspace{-0.5cm}}
+
+
+%%%% Define Skills Bold Formatting
+\newcommand{\hskills}[1]{
+\textbf{\bfseries #1} }
+
+%%%% Set Subsection formatting
+\titleformat{\subsection}{\vspace{-0.1cm} 
+\bfseries \fontsize{11pt}{2cm}}{}{0em}{}[\vspace{-0.2cm}]
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  END OF "DO NOT TOUCH" REGION
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+
+\begin{document}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  HEADER
+%%%%%%% --------------------------------------------------------------------------------------
+\begin{center}
+    \begin{minipage}[b]{0.24\textwidth}
+            \large +91-6397118669 \\
+            \large \href{mailto:devpant.btech.cs19@iiitranchi.ac.in}{devpant.btech.cs19@iiitranchi.ac.in} 
+    \end{minipage}% 
+    \begin{minipage}[b]{0.5\textwidth}
+            \centering
+            {\Huge Dev Pant} \\ %
+          
+    \end{minipage}% 
+    \begin{minipage}[b]{0.24\textwidth}
+            \flushright \large  %Willing to Relocate
+            {\href{https://www.linkedin.com/in/dev-pant/}{linkedin.com/in/dev-pant/} } \\
+            \href{https://github.com/Sigsev-Dev}{Github: Sigsev-Dev}
+    \end{minipage}   
+    
+\vspace{-0.15cm} 
+
+\end{center}
+\vspace{-0.25cm}
+
+\vspace{-0.2cm}
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  EDUCATION
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Education }
+\subsection*{B.Tech in CSE, {\normalsize \normalfont Indian Institute of Information Technology, Ranchi, GPA: 8.31/10} \hfill July 2019 --- Present} 
+\vspace{0.1cm}
+\subsection*{Senior Secondary, {\normalsize \normalfont GRD Academy, Dehradun, Percentage: 78 } \hfill April 2017 --- April 2019} 
+\vspace{0.1cm}
+\subsection*{High School, {\normalsize \normalfont GRD Academy, Dehradun, GPA: 9.8/10 } \hfill April 2016 --- April 2017} 
+\vspace{0.2cm}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  ACADEMIC PROJECTS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Projects} 
+
+%%%%%%% ----------------------------------- Role 1 ----------------------------------- %%%%%%%
+\subsection*{\href{https://github.com/Sigsev-Dev/graphics}{Graphics and games: } \hfill Aug 2021 --- Present} 
+\vspace{-0.05cm}
+{\normalsize \normalfont \emph{\gray{Game Development}}}
+\vspace{-0.25cm}
+    \begin{zitemize}
+        \item FPS interactive game with fast 2D rendering using \textbf{OpenGL}, written in \textbf{Golang} and windowed using \textbf{SDL2} library. 
+        \item Used \textbf{Goroutines} to parallelize simplex noises and turn them into packages with added bilinear scaling for smooth texture interpolation.
+        \item Working on the OpenGL implementations with 3D rendering to develop and deploy a working 3d game aiming for high level graphics animation. The game/project is infant at this stage. 
+        \item Current execution environment supports linux although provision for cross platform environment is available.
+    \end{zitemize}
+
+
+%%%%%%% ----------------------------------- Role 2 ----------------------------------- %%%%%%%
+\subsection*{\href{https://github.com/Sigsev-Dev/AdaniWilmar-Asset-Tracker-using-Hyperledger-Fabric-with-QR-code-Integration}{Supply chain asset tracker : }  \hfill Sep 2021 --- Oct 2021}
+\vspace{-0.05cm}
+{\normalsize \normalfont \emph{\gray{Adani Jack The Hack Hackathon :}}}\hspace{0.1cm}{\normalsize \normalfont \emph{\gray{ Worked in a team of 3}}}
+\vspace{-0.25cm}
+    \begin{zitemize}
+        \item Built a supply chain asset tracker using \textbf{Hyperledger Fabric}, manufacturing serialization using unique QR code integration to track the entire journey of a commodity from farmer to manufacturer to consumers (with provision for integrated IOT devices).
+        \item Aimed to solve the inherent problem of traceability of products throughout it's lifecycle.
+        \item Worked under the mentorship of professionals at Adani Group developing ideas for a full-fledged business model. 
+    \end{zitemize}
+
+
+%%%%%%% ----------------------------------- Role 3 ----------------------------------- %%%%%%%
+\subsection*{\href{https://github.com/Sigsev-Dev/user_centric_host_hub_with_blockchain}{Open banking with blockchain- A user centric host hub : } \hfill Sep 2021 } 
+\vspace{-0.05cm}
+{\normalsize \normalfont \emph{\gray{TDefi Hackathon, GITEX 2021 :}}} {\normalsize \normalfont \emph{\gray{ Worked in a team of 3}}}
+\vspace{-0.25cm}
+    \begin{zitemize}
+        \item Solving the autonomous problem for identity on demand in open banking with automated shared banking experience. 
+        \item Proposed a high level third party API that sets up a unique and universal profile/identity of bankers in a decentralized network with integrated direct access to multiple open banking APIs.
+        \item Built a prototype \textbf{Hyperledger-Iroha} network with provision for instantaneous loan and fixed deposit migration.
+    \end{zitemize}
+
+
+%%%%%%% ----------------------------------- Role 4 ----------------------------------- %%%%%%%
+\subsection*{\href{https://github.com/Sigsev-Dev/Algorithm-Visualizer}{Algorithm Visualizer :} \hfill June 2021 --- Jul 2021} 
+\vspace{-0.05cm}
+{\normalsize \normalfont \emph{\gray{Web Development}}} 
+\vspace{-0.25cm}
+    \begin{zitemize}
+        \item A visualization tool for different types of sorting algorithms, to help provide better understanding of the back-end working of the algorithms through step-wise animations. 
+        \item Developed and deployed a full stack web platform using \textbf{React}, \textbf{JavaScript}, \textbf{HTML} and \textbf{CSS}.
+    \end{zitemize}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  HONORS AND AWARDS
+%%%%%%% --------------------------------------------------------------------------------------
+\vspace{-0.05cm}
+\section{Achievements}
+
+\begin{tabular}[t]{ p{4em} p{50em}}
+\hskills{2021} & Among top 10 finalist at Jack The Hack onsite Hackathon by Adani Group with 1200+ participants. \\ %
+\hskills{2021} & Finalist at TradeDOG/TDefi Bizthon: invited to pitch at "Future Blockchain Summit in GITEX GLOBAL 2021" at the Dubai World Trade Centre.\\ %
+\hskills{2021} & Qualified till Round 2 (ranked 2826) in Facebook Hacker Cup 2021.\\ %
+\hskills{2021} & Secured rank 1265 in Google HashCode 2021.\\ %
+\hskills{2020} & Qualified Facebook Hacker Cup till Round 1.\\ %
+\hskills{2019} & Contest AIR of 439 in Codechef January Challenge 2021 and 239 in IIIT Pune's Infinity 2k20.\\ %
+\hskills{2019} & Top 3 percentile out of 1.5 M students in JEE Mains. \\ %
+\end{tabular}
+\vspace{-0.35cm}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  SKILLS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabular}{p{9em} p{48em}}
+\hskills{Languages} &  C, C++, Python, JavaScript, Node.js, Golang \\
+\hskills{Utilities} &  Linux, Git, MySQL, Vim, React, NVM, \LaTeX, SDL, OpenGL\\
+\hskills{Familiarities} & Docker, Sass, Solidity, Vulkan, OpenVR, Unity3d \\
+\end{tabular}
+\vspace{-0.35cm}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  COURSES
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Relevant Coursework} 
+\renewcommand\refname{\vskip -1.5em}
+\begin{minipage}[t]{.3\linewidth}
+  \begin{zitemize}
+    \item DSA: Theory (A),Lab (O)
+    \item Discrete Mathematics (O)
+    \item Compiler Design (A)
+    \item Computer Graphics (A)
+  \end{zitemize}
+\end{minipage}%
+\begin{minipage}[t]{.3\linewidth}
+  \begin{zitemize}
+    \item Combinatorics and Graph Theory (O)
+    \item Advanced Algorithm (O)
+    \item Computer Networks (A)
+    \item Basics of C/C++: Theory (B), Lab (A)
+  \end{zitemize}
+\end{minipage}%
+\begin{minipage}[t]{.3\linewidth}
+  \begin{zitemize}
+    \item Design and Analysis of Algorithm (O)
+    \item Computer Organization (A)
+    \item Computer Architechture (A)
+    \item Operating System: Theory (B), Lab (A) 
+  \end{zitemize}
+\end{minipage}%
+
+\vspace{0.2cm}
+\renewcommand\refname{\vskip -1.5em}
+\hspace{2.5 cm}
+\begin{minipage}[t]{.4\linewidth}
+     \gray{\emph{*O : grade for outstanding performance}}  
+\end{minipage}%
+\begin{minipage}[t]{.3\linewidth}
+     \gray{\emph{*A,B: Grade}}
+\end{minipage}%
+
+\vspace{-0.4cm}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  AWARDS & HONORS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{Position of Responsibilities}
+\begin{zitemize}
+\item Community Coordinator of the cybersecurity-cryptography-blockchain club @ House Of Geeks, IIIT Ranchi 
+\item Member and active contributor for community of competitive programming @ House of Geeks, IIIT Ranchi \\ %
+\item Vice Captain of Chess team, IIIT Ranchi  
+\end{zitemize}
+
+
+%%%%%%% ---------------------------- END DOC HERE ---------------------------- %%%%%%% 
+\end{document}
